@@ -26,7 +26,8 @@ To nie jest tylko repozytorium plików. To cyfrowy fundament **Architektury Woli
 * **Fundament:** Doświadczenie z budowy przekute w strukturę uniwersum.
 
 ---
-
+BIBLIOTEKA OBRAZÓW
+##https://pl.pinterest.com/laciatyplas/eteruniverse-picture/?request_params=%7B%221%22%3A%20130%2C%20%227%22%3A%208230963285557176277%2C%20%228%22%3A%201023935733969948752%2C%20%2230%22%3A%20%22eteruniverse%20picture%22%2C%20%2232%22%3A%2045%2C%20%2233%22%3A%20%5B1023935665297942173%2C%201023935665297942171%2C%201023935665297942170%2C%201023935665297942169%2C%201023935665297942168%2C%201023935665297942166%2C%201023935665297942165%2C%201023935665297942164%2C%201023935665297942167%2C%201023935665297942163%2C%201023935665297942144%2C%201023935665297942143%2C%201023935665297942142%2C%201023935665297942141%2C%201023935665297942140%5D%2C%20%2236%22%3A%20%5B1023935733969948752%5D%2C%20%2237%22%3A%20%22eteruniverse%20picture%22%2C%20%2234%22%3A%200%2C%20%22102%22%3A%204%7D&full_feed_title=eteruniverse%20picture&view_parameter_type=3069&pins_display=3
 ## ⚠️ OSTRZEŻENIE SYSTEMOWE
 
 To repozytorium zawiera dane o wysokim stopniu "Woli". Nieudolna próba replikacji bez zrozumienia pojęcia **Architecture of Will** zakończy się błędem systemowym. 
