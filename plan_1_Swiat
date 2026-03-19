@@ -1,0 +1,295 @@
+export type BookStatus = 'idea' | 'szkic' | 'pisanie' | 'gotowe' | 'opublikowane';
+
+export interface EteruniverseBook {
+  id: string;
+  title: string;
+  status: BookStatus;
+  coverUrl?: string;
+  description?: string;
+}
+
+export interface EteruniverseGate {
+  id: string;
+  number: string;
+  name: string;
+  theme: string;
+  emoji: string;
+  color: {
+    hsl: string;
+    gradient: string;
+    badge: string;
+    border: string;
+  };
+  books: EteruniverseBook[];
+}
+
+export const BOOK_STATUSES: Record<BookStatus, { label: string; color: string; bg: string }> = {
+  idea: { label: 'Idea', color: 'text-gray-400', bg: 'bg-gray-500/20' },
+  szkic: { label: 'Szkic', color: 'text-orange-400', bg: 'bg-orange-500/20' },
+  pisanie: { label: 'Pisanie', color: 'text-cyan-400', bg: 'bg-cyan-500/20' },
+  gotowe: { label: 'Gotowe', color: 'text-yellow-400', bg: 'bg-yellow-500/20' },
+  opublikowane: { label: 'Opublikowane', color: 'text-emerald-400', bg: 'bg-emerald-500/20' },
+};
+
+export const ETERUNIVERSE_GATES: EteruniverseGate[] = [
+  {
+    id: 'gate-1',
+    number: 'I',
+    name: 'PRZEBUDZENIE',
+    theme: 'świadomość, start, obserwator',
+    emoji: '🟦',
+    color: {
+      hsl: '185 70% 50%',
+      gradient: 'from-cyan-600 to-cyan-400',
+      badge: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
+      border: 'border-cyan-500/40',
+    },
+    books: [
+      { id: 'book-1-1', title: 'EtherSeeker: Architektura Woli', status: 'idea' },
+      { id: 'book-1-2', title: 'EtherSeeker: Kronika Woli', status: 'idea' },
+      { id: 'book-1-3', title: 'Kwant Woli', status: 'idea' },
+      { id: 'book-1-4', title: 'Interfejs Świadomości', status: 'idea' },
+      { id: 'book-1-5', title: 'Kronika Obserwatora', status: 'idea' },
+      { id: 'book-1-6', title: 'Esencja Obserwacji', status: 'idea' },
+      { id: 'book-1-7', title: 'Mapa Eteru: Punkt Zerowy', status: 'idea' },
+      { id: 'book-1-8', title: 'Instrukcja Pustki', status: 'idea' },
+      { id: 'book-1-9', title: 'Triada Świadomości', status: 'idea' },
+      { id: 'book-1-10', title: 'Punkt Świadomy', status: 'idea' },
+    ],
+  },
+  {
+    id: 'gate-2',
+    number: 'II',
+    name: 'STRUKTURA',
+    theme: 'system, architektura, prawa',
+    emoji: '🟨',
+    color: {
+      hsl: '43 65% 50%',
+      gradient: 'from-yellow-600 via-yellow-500 to-gray-900',
+      badge: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
+      border: 'border-yellow-500/40',
+    },
+    books: [
+      { id: 'book-2-1', title: 'SystemSeeker: Architektura Rzeczywistości', status: 'idea' },
+      { id: 'book-2-2', title: 'Anty-Sekret: Protokół Architekta', status: 'idea' },
+      { id: 'book-2-3', title: 'Prawo Woli', status: 'idea' },
+      { id: 'book-2-4', title: 'Mechanika Decyzji', status: 'idea' },
+      { id: 'book-2-5', title: 'Konstrukcja Umysłu', status: 'idea' },
+      { id: 'book-2-6', title: 'Kod Intencji', status: 'idea' },
+      { id: 'book-2-7', title: 'Struktura Iluzji', status: 'idea' },
+      { id: 'book-2-8', title: 'Algorytm Człowieka', status: 'idea' },
+      { id: 'book-2-9', title: 'System Bram', status: 'idea' },
+      { id: 'book-2-10', title: 'Mapa Eteruniverse', status: 'idea' },
+    ],
+  },
+  {
+    id: 'gate-3',
+    number: 'III',
+    name: 'BIOLOGIA / ŻYCIE',
+    theme: 'ciało, natura, instynkt',
+    emoji: '🟩',
+    color: {
+      hsl: '145 60% 45%',
+      gradient: 'from-emerald-600 to-emerald-400',
+      badge: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+      border: 'border-emerald-500/40',
+    },
+    books: [
+      { id: 'book-3-1', title: 'BioSeeker: Kod Biologiczny', status: 'idea' },
+      { id: 'book-3-2', title: 'Atlas Zwierząt: Klucz Eteryczny', status: 'idea' },
+      { id: 'book-3-3', title: 'Ciało jako Interfejs', status: 'idea' },
+      { id: 'book-3-4', title: 'Biologia Woli', status: 'idea' },
+      { id: 'book-3-5', title: 'Pamięć Ciała', status: 'idea' },
+      { id: 'book-3-6', title: 'Instynkt Przetrwania', status: 'idea' },
+      { id: 'book-3-7', title: 'Rytmy Natury', status: 'idea' },
+      { id: 'book-3-8', title: 'System Regeneracji', status: 'idea' },
+      { id: 'book-3-9', title: 'Człowiek Naturalny', status: 'idea' },
+      { id: 'book-3-10', title: 'Powrót do Ziemi', status: 'idea' },
+    ],
+  },
+  {
+    id: 'gate-4',
+    number: 'IV',
+    name: 'CZAS / PRZESTRZEŃ',
+    theme: 'czas, trajektorie, równoległości',
+    emoji: '🟪',
+    color: {
+      hsl: '270 60% 55%',
+      gradient: 'from-violet-600 to-violet-400',
+      badge: 'bg-violet-500/20 text-violet-400 border-violet-500/30',
+      border: 'border-violet-500/40',
+    },
+    books: [
+      { id: 'book-4-1', title: 'InterSeeker: Czas Kwantowy', status: 'idea' },
+      { id: 'book-4-2', title: 'InterSeeker: Efekt Cienia', status: 'idea' },
+      { id: 'book-4-3', title: 'InterSeeker: Quantum Time', status: 'idea' },
+      { id: 'book-4-4', title: 'Trajektorie Istnienia', status: 'idea' },
+      { id: 'book-4-5', title: 'Równoległe Ja', status: 'idea' },
+      { id: 'book-4-6', title: 'Pętle Czasowe', status: 'idea' },
+      { id: 'book-4-7', title: 'Pamięć Przyszłości', status: 'idea' },
+      { id: 'book-4-8', title: 'Linie Losu', status: 'idea' },
+      { id: 'book-4-9', title: 'Mechanika Przejścia', status: 'idea' },
+      { id: 'book-4-10', title: 'Poza Czasem', status: 'idea' },
+    ],
+  },
+  {
+    id: 'gate-5',
+    number: 'V',
+    name: 'ARCHETYPY / CIEMNOŚĆ',
+    theme: 'cień, archetyp, konfrontacja',
+    emoji: '🟥',
+    color: {
+      hsl: '0 70% 50%',
+      gradient: 'from-red-600 to-red-400',
+      badge: 'bg-red-500/20 text-red-400 border-red-500/30',
+      border: 'border-red-500/40',
+    },
+    books: [
+      { id: 'book-5-1', title: 'Archetypy Człowieka: Tom I – Złudzenia', status: 'idea' },
+      { id: 'book-5-2', title: 'Archetypy Człowieka: Tom II – Mroki', status: 'idea' },
+      { id: 'book-5-3', title: 'Archetypy Człowieka: Tom III – Objawienia', status: 'idea' },
+      { id: 'book-5-4', title: 'Kronika Splątania', status: 'idea' },
+      { id: 'book-5-5', title: 'Cień Ojca', status: 'idea' },
+      { id: 'book-5-6', title: 'Cień Boga', status: 'idea' },
+      { id: 'book-5-7', title: 'Mechanizm Projekcji', status: 'idea' },
+      { id: 'book-5-8', title: 'Upadek Iluzji', status: 'idea' },
+      { id: 'book-5-9', title: 'Prawda Archetypu', status: 'idea' },
+      { id: 'book-5-10', title: 'Ogień Świadomości', status: 'idea' },
+    ],
+  },
+  {
+    id: 'gate-6',
+    number: 'VI',
+    name: 'WOLA / PRZETRWANIE',
+    theme: 'siła, wybór, życie',
+    emoji: '🟧',
+    color: {
+      hsl: '30 90% 55%',
+      gradient: 'from-orange-600 to-amber-400',
+      badge: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
+      border: 'border-orange-500/40',
+    },
+    books: [
+      { id: 'book-6-1', title: 'NutoSeeker: Otwarty Kanał', status: 'idea' },
+      { id: 'book-6-2', title: 'NutoSeeker: System Przetrwania', status: 'idea' },
+      { id: 'book-6-3', title: 'NutoSeeker: Ziemia i Przekaz', status: 'idea' },
+      { id: 'book-6-4', title: 'Wola Przetrwania', status: 'idea' },
+      { id: 'book-6-5', title: 'Decyzja Życia', status: 'idea' },
+      { id: 'book-6-6', title: 'Cisza Ojca', status: 'idea' },
+      { id: 'book-6-7', title: 'Powrót do Syna', status: 'idea' },
+      { id: 'book-6-8', title: 'Życie w Prawdzie', status: 'idea' },
+      { id: 'book-6-9', title: 'Droga Wojownika', status: 'idea' },
+      { id: 'book-6-10', title: 'Serce Systemu', status: 'idea' },
+    ],
+  },
+  {
+    id: 'gate-7',
+    number: 'VII',
+    name: 'INTERFEJS / UMYSŁ',
+    theme: 'percepcja, interakcja',
+    emoji: '🔵',
+    color: {
+      hsl: '210 90% 55%',
+      gradient: 'from-blue-600 to-blue-400',
+      badge: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+      border: 'border-blue-500/40',
+    },
+    books: [
+      { id: 'book-7-1', title: 'InterfejsSeeker: Interakcja Umysłu', status: 'idea' },
+      { id: 'book-7-2', title: 'InterfejsSeeker: Percepcja', status: 'idea' },
+      { id: 'book-7-3', title: 'Język Rzeczywistości', status: 'idea' },
+      { id: 'book-7-4', title: 'Symulacja Świata', status: 'idea' },
+      { id: 'book-7-5', title: 'Ekran Umysłu', status: 'idea' },
+      { id: 'book-7-6', title: 'Kontakt', status: 'idea' },
+      { id: 'book-7-7', title: 'System Uwagowy', status: 'idea' },
+      { id: 'book-7-8', title: 'Przebicie Iluzji', status: 'idea' },
+      { id: 'book-7-9', title: 'Sygnał', status: 'idea' },
+      { id: 'book-7-10', title: 'Nadajnik', status: 'idea' },
+    ],
+  },
+  {
+    id: 'gate-8',
+    number: 'VIII',
+    name: 'DUCH / WIARA',
+    theme: 'sens, transcendencja',
+    emoji: '🟣',
+    color: {
+      hsl: '280 70% 60%',
+      gradient: 'from-purple-600 to-purple-400',
+      badge: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+      border: 'border-purple-500/40',
+    },
+    books: [
+      { id: 'book-8-1', title: 'ReligioSeeker', status: 'idea' },
+      { id: 'book-8-2', title: 'Atlas Wierzeń', status: 'idea' },
+      { id: 'book-8-3', title: 'Upadek Religii', status: 'idea' },
+      { id: 'book-8-4', title: 'Bóg jako Konstrukcja', status: 'idea' },
+      { id: 'book-8-5', title: 'Świętość Świadomości', status: 'idea' },
+      { id: 'book-8-6', title: 'Mit Zbawienia', status: 'idea' },
+      { id: 'book-8-7', title: 'Prawda Bez Boga', status: 'idea' },
+      { id: 'book-8-8', title: 'Duch Bez Dogmatu', status: 'idea' },
+      { id: 'book-8-9', title: 'Wiara w Siebie', status: 'idea' },
+      { id: 'book-8-10', title: 'Cisza Absolutu', status: 'idea' },
+    ],
+  },
+  {
+    id: 'gate-9',
+    number: 'IX',
+    name: 'OBFITOŚĆ',
+    theme: 'przepływ, materia, życie',
+    emoji: '🟢',
+    color: {
+      hsl: '145 70% 45%',
+      gradient: 'from-green-500 to-yellow-400',
+      badge: 'bg-green-500/20 text-green-400 border-green-500/30',
+      border: 'border-green-500/40',
+    },
+    books: [
+      { id: 'book-9-1', title: 'ObfitoSeeker: Kod Obfitości', status: 'idea' },
+      { id: 'book-9-2', title: 'AbundanceSeeker: The Flow', status: 'idea' },
+      { id: 'book-9-3', title: 'Przepływ Życia', status: 'idea' },
+      { id: 'book-9-4', title: 'Ekonomia Energii', status: 'idea' },
+      { id: 'book-9-5', title: 'Mit Braku', status: 'idea' },
+      { id: 'book-9-6', title: 'Zasada Wystarczalności', status: 'idea' },
+      { id: 'book-9-7', title: 'Bogactwo Świadomości', status: 'idea' },
+      { id: 'book-9-8', title: 'Materia i Sens', status: 'idea' },
+      { id: 'book-9-9', title: 'Obfitość Bez Iluzji', status: 'idea' },
+      { id: 'book-9-10', title: 'Życie w Przepływie', status: 'idea' },
+    ],
+  },
+  {
+    id: 'gate-10',
+    number: 'X',
+    name: 'SYNTEZA / ETERNIONY',
+    theme: 'koniec i początek',
+    emoji: '🟡',
+    color: {
+      hsl: '280 50% 55%',
+      gradient: 'from-violet-500 via-purple-500 to-yellow-400',
+      badge: 'bg-violet-500/20 text-yellow-400 border-violet-500/30',
+      border: 'border-violet-500/40',
+    },
+    books: [
+      { id: 'book-10-1', title: 'Eterniony: Tom I', status: 'idea' },
+      { id: 'book-10-2', title: 'Eterniony: Tom II', status: 'idea' },
+      { id: 'book-10-3', title: 'Eterniony: Tom III', status: 'idea' },
+      { id: 'book-10-4', title: 'The Eterion Protocol', status: 'idea' },
+      { id: 'book-10-5', title: 'SoulGrid: Sieć Duszy', status: 'idea' },
+      { id: 'book-10-6', title: 'Knowledge Seeker', status: 'idea' },
+      { id: 'book-10-7', title: 'Mapa Całości', status: 'idea' },
+      { id: 'book-10-8', title: 'Człowiek Kompletny', status: 'idea' },
+      { id: 'book-10-9', title: 'Powrót do Źródła', status: 'idea' },
+      { id: 'book-10-10', title: 'Eter – Jedno', status: 'idea' },
+    ],
+  },
+];
+
+export const getTotalBooks = () => {
+  return ETERUNIVERSE_GATES.reduce((acc, gate) => acc + gate.books.length, 0);
+};
+
+export const getBooksByStatus = (status: BookStatus) => {
+  return ETERUNIVERSE_GATES.flatMap(gate => 
+    gate.books.filter(book => book.status === status)
+  );
+};
